@@ -1,2 +1,2 @@
-import ReactCheckbox from 'components/react-checkbox';
-export default ReactCheckbox;
+import ReactCheckboxGroup from 'components/react-checkbox-group';
+export  default  ReactCheckboxGroup;

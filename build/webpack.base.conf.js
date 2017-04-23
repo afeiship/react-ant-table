@@ -15,6 +15,7 @@ var externals = process.env.NODE_ENV === 'production' ? {
   'react-dom': 'react-dom',
   'noop':'noop',
   'prop-types':'prop-types',
+  'react-selected-items':'react-selected-items',
 } : {};
 
 module.exports = {

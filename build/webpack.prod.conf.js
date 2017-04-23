@@ -9,7 +9,7 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-checkbox.js',
+  filename: 'react-checkbox-group.js',
   library: 'ReactCheckbox',
   libraryTarget: 'umd'
 }

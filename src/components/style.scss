@@ -1,10 +1,10 @@
 .react-checkbox {
-  line-height:2.4em;
-  > .react-checkbox-icon {
+  line-height: 2.4em;
+  &-icon {
     width: 1.5em;
     height: 1.5em;
     line-height: 1.5em;
-    margin-right:.3em;
+    margin-right: .3em;
     text-align: center;
     display: inline-block;
     border-radius: 20px;
@@ -21,15 +21,15 @@
     }
   }
 
-  &[data-checked=true] {
-    > .react-checkbox-icon {
+  &[data-selected=true] {
+    .react-checkbox-icon {
       background: #007aff;
       border: 1px solid #007aff;
     }
   }
 
-  &[data-checked=false] {
-    > .react-checkbox-icon {
+  &[data-selected=false] {
+    .react-checkbox-icon {
       background: #fff;
       border: 1px solid #ccc;
     }

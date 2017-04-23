@@ -1,4 +1,4 @@
-# react-checkbox
+# react-checkbox-group
 > Checkbox component for react.
 
 
@@ -14,7 +14,7 @@
 class App extends React.Component{
   render(){
     return (
-      <div className="hello-react-checkbox">
+      <div className="hello-react-checkbox-group">
         <ReactCheckbox />
     </div>
     );
