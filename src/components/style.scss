@@ -1,3 +1,37 @@
-.react-checkbox{
-  color:#000;  
+.react-checkbox {
+  line-height:2.4em;
+  > .react-checkbox-icon {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right:.3em;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+
+    &:after {
+      border: 1px solid #fff;
+      border-width: 0 1px 1px 0;
+      color: #fff;
+      content: '';
+      width: 0.4em;
+      height: 0.9em;
+      display: inline-block;
+      transform: rotate(45deg);
+    }
+  }
+
+  &[data-checked=true] {
+    > .react-checkbox-icon {
+      background: #007aff;
+      border: 1px solid #007aff;
+    }
+  }
+
+  &[data-checked=false] {
+    > .react-checkbox-icon {
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+  }
 }

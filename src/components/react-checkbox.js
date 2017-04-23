@@ -1,37 +1,46 @@
 import './style.scss';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import noop from 'noop';
 
-export default class extends React.Component{
+export default class extends PureComponent {
   static propTypes = {
-    cssClass:React.PropTypes.string,
-    value:React.PropTypes.bool,
-    onChange:React.PropTypes.func,
+    className: PropTypes.string,
+    checked: PropTypes.bool,
+    align: PropTypes.string,
   };
 
   static defaultProps = {
-    value:false,
-    onChange:null
+    checked: false,
+    align: 'left'
   };
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setState(nextProps);
+  }
+
 
   constructor(props) {
     super(props);
     this.state = {
-      value:props.value
+      checked: props.checked
     };
   }
 
-  _onClick(){
-    this.setState({
-      value:!this.state.value
-    });
-    this.props.onChange(this.state);
+  _onClick() {
+    this.setState({checked: !this.state.checked})
   }
 
-  render(){
+  render() {
+    const {align, className, children, ...props} = this.props;
     return (
-      <span onClick={()=>{this._onClick()}} className={classNames('react-checkbox',this.props.cssClass)}>
-        {this.props.children}
-      </span>
+      <div {...props} data-checked={this.state.checked} onClick={this._onClick.bind(this)}
+           className={classNames('react-checkbox', className)}>
+        {align === 'left' && <i className="react-checkbox-icon"/>}
+        {children}
+        {align === 'right' && <i className="react-checkbox-icon"/>}
+      </div>
     );
   }
 }

@@ -1,5 +1,27 @@
-#react-checkbox
-> Abstract toggle/checkbox component for react.
+# react-checkbox
+> Checkbox component for react.
+
+
+## properties:
+```javascript
+  static propTypes = {
+    className:PropTypes.string
+  };
+```
+
+## usage:
+```jsx
+class App extends React.Component{
+  render(){
+    return (
+      <div className="hello-react-checkbox">
+        <ReactCheckbox />
+    </div>
+    );
+  }
+}
+```
+
 
 
 ## resource:
@@ -7,14 +29,3 @@
 + https://github.com/steven5538/vue-button
 + https://yarnpkg.com/en/docs/install
 
-
-## props:
-| name | type | value | description |
-| :----| :----| :----| :----|
-| visible  | Boolean | true/false | v-show |
-
-
-## usage:
-```html
-<react-checkbox :visible="true" />
-```
