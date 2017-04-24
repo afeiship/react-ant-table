@@ -24,8 +24,9 @@ export default class extends React.PureComponent {
       <ReactSelectedItems type="checkbox" {...props} className={classNames('react-checkbox-group', className)}>
         {
           items.map((item, index) => {
+            const {disabled,selected} = item;
             return (
-              <ReactSelectedItem data={item} key={index} className="react-checkbox">
+              <ReactSelectedItem disabled={disabled} selected={selected} data={item} key={index} className="react-checkbox">
                 {template(item, <i className="react-checkbox-icon"/>)}
               </ReactSelectedItem>
             );

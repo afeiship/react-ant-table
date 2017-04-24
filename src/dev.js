@@ -7,11 +7,13 @@ class App extends React.Component {
     items: [
       {
         id: 1,
-        text: '1234'
+        text: '1234',
+        selected:true,
       },
       {
         id: 2,
-        text: '2345'
+        text: '2345',
+        disabled:true
       }
     ]
   };

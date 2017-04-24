@@ -1,5 +1,11 @@
 .react-checkbox {
   line-height: 2.4em;
+
+  &[disabled]{
+    opacity:0.4;
+    pointer-events: none;
+  }
+
   &-icon {
     width: 1.5em;
     height: 1.5em;
