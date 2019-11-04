@@ -26,6 +26,7 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <ReactCheckboxGroup
+          name="abc"
           onChange={(e) => {
             console.log('change:', e.target.value);
           }}

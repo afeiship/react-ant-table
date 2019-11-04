@@ -13,6 +13,7 @@ export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
+    name: PropTypes.string,
     defaultValue: PropTypes.array,
     value: PropTypes.array,
     items: PropTypes.array,
@@ -44,7 +45,14 @@ export default class extends Component {
   };
 
   render() {
-    const { className, items, defaultValue, onChange, ...props } = this.props;
+    const {
+      className,
+      name,
+      items,
+      defaultValue,
+      onChange,
+      ...props
+    } = this.props;
     return (
       <section
         data-component={CLASS_NAME}
@@ -54,16 +62,17 @@ export default class extends Component {
         {items.map((item) => {
           const { value, label, ...itemProps } = item;
           return (
-            <label key={value}>
+            <label key={value} className={`${CLASS_NAME}__item`}>
               <input
                 defaultChecked={defaultValue.indexOf(value) > -1}
+                name={name}
                 type="checkbox"
                 data-value={value}
                 onChange={this._onChange}
                 className="is-field"
                 {...itemProps}
               />
-              <span>{label}</span>
+              <span className="is-label">{label}</span>
             </label>
           );
         })}
