@@ -57,8 +57,8 @@ export default class extends Component {
       <section
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
-        {...props}
-        ref={(root) => (this.root = root)}>
+        ref={(root) => (this.root = root)}
+        {...props}>
         {items.map((item) => {
           const { value, label, ...itemProps } = item;
           return (
