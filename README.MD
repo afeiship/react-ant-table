@@ -1,58 +1,62 @@
 # react-checkbox-group
-> Checkbox component for react.
+> Checkbox/checkbox group component for react.
 
-
-## properties:
-```javascript
-  static propTypes = {
-    className: PropTypes.string,
-    items: PropTypes.array,
-    template: PropTypes.func
-  };
+## install
+```shell
+npm install -S afeiship/react-checkbox-group
 ```
 
-## usage:
-```jsx
-class App extends React.Component {
-  state = {
-    items: [
-      {
-        id: 1,
-        text: '1234'
-      },
-      {
-        id: 2,
-        text: '2345'
-      }
-    ]
-  };
+## usage
+1. import css
+  ```scss
+  @import "~react-checkbox-group/style.scss";
 
-  _template(item, iconEl) {
-    return (
-      <div className="item">{ iconEl } <span>{item.text}</span></div>
-    )
+  // customize your styles:
+  $react-checkbox-group-options: ()
+  ```
+2. import js
+  ```js
+  import ReactCheckboxGroup from '../src/main';
+  import ReactDOM from 'react-dom';
+  import React from 'react';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      defaultValue: ['v1', 'v2'],
+      items: [
+        {
+          label: 'optino1',
+          value: 'v1'
+        },
+        {
+          label: 'optino2',
+          value: 'v2'
+        },
+        {
+          label: 'optino3',
+          value: 'v3'
+        }
+      ]
+    };
+
+    render() {
+      return (
+        <div className="app-container">
+          <ReactCheckboxGroup
+            onChange={(e) => {
+              console.log('change:', e.target.value);
+            }}
+            items={this.state.items}
+            defaultValue={this.state.defaultValue}
+          />
+        </div>
+      );
+    }
   }
 
-  _change1(inEvent){
-    console.log(inEvent.target.value);
-  }
+  ReactDOM.render(<App />, document.getElementById('app'));
+  ```
 
-  render() {
-    return (
-      <div className="hello-react-checkbox-group">
-        <ReactCheckboxGroup onChange={this._change1.bind(this)} items={this.state.items} template={this._template.bind(this)}/>
-      </div>
-    );
-  }
-}
-
-
-```
-
-
-
-## resource:
-+ http://www.cnblogs.com/Kummy/p/4966937.html
-+ https://github.com/steven5538/vue-button
-+ https://yarnpkg.com/en/docs/install
-
+## documentation
+- https://afeiship.github.io/react-checkbox-group/
