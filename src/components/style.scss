@@ -2,4 +2,9 @@ $react-checkbox-group-options: () !default;
 
 .react-checkbox-group {
   user-select: none;
+
+  // disabled
+  .is-field[disabled] + .is-label {
+    opacity: 0.6;
+  }
 }

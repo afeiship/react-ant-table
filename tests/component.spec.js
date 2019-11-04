@@ -31,4 +31,28 @@ describe('Basic Test', () => {
     expect(values).toEqual(['v1', 'v2']);
     // expect(cnt).toMatch(/Hello React/);
   });
+
+  test('set disabled',()=>{
+    const state = {
+      items: [
+        {
+          label: 'optino1',
+          value: 'v1',
+          disabled: true
+        },
+        {
+          label: 'optino2',
+          value: 'v2'
+        }
+      ]
+    };
+
+    const component = mount(<ReactCheckboxGroup {...state} />);
+    const fields = component.find('.is-field');
+
+    // fileds
+    expect(fields.at(0).getDOMNode().disabled).toBe(true);
+    expect(fields.at(1).getDOMNode().disabled).toBe(false);
+
+  })
 });

@@ -9,7 +9,8 @@ class App extends React.Component {
     items: [
       {
         label: 'optino1',
-        value: 'v1'
+        value: 'v1',
+        disabled: true
       },
       {
         label: 'optino2',
