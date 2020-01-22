@@ -1,4 +1,10 @@
-import { configs, inputs, outputs, loaders, plugins } from 'webpack-lib-kits';
+import {
+  configs,
+  inputs,
+  outputs,
+  loaders,
+  plugins
+} from '@feizheng/webpack-lib-kits';
 
 export default {
   mode: configs.mode(),
@@ -9,7 +15,7 @@ export default {
     alias: configs.alias()
   },
   module: {
-    rules: [loaders.babel(), loaders.image(), loaders.sass()]
+    rules: [loaders.babel(), loaders.image(), loaders.sass(), loaders.version()]
   },
   plugins: [plugins.minCssExtract()]
 };

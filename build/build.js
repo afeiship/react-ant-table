@@ -7,11 +7,15 @@ import {
   loaders,
   plugins,
   externals
-} from 'webpack-lib-kits';
+} from '@feizheng/webpack-lib-kits';
 
 export default merge(baseConfig, {
   entry: inputs.build(),
-  output: outputs.build(),
-  externals: externals.base(),
+  output: outputs.build({
+    library: 'ReactCheckboxGroup'
+  }),
+  externals: externals.base({
+    '@feizheng/noop': '@feizheng/noop'
+  }),
   plugins: [plugins.clean(), plugins.copyStyles()]
 });

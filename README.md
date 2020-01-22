@@ -1,15 +1,27 @@
 # react-checkbox-group
 > Checkbox/checkbox group component for react.
 
-## install
+## installation
 ```shell
-npm install -S afeiship/react-checkbox-group
+npm install -S @feizheng/react-checkbox-group
 ```
+
+## update
+```shell
+npm update @feizheng/react-checkbox-group
+```
+
+## properties
+| property  | type   | default | description |
+| --------- | ------ | ------- | ----------- |
+| className | String | -       | -           |
+| value     | -      | -       | -           |
+| onChange  | -      | -       | -           |
 
 ## usage
 1. import css
   ```scss
-  @import "~react-checkbox-group/style.scss";
+  @import "~@feizheng/react-checkbox-group/dist/style.scss";
 
   // customize your styles:
   $react-checkbox-group-options: ()
@@ -27,7 +39,8 @@ npm install -S afeiship/react-checkbox-group
       items: [
         {
           label: 'optino1',
-          value: 'v1'
+          value: 'v1',
+          disabled: true
         },
         {
           label: 'optino2',
@@ -44,6 +57,7 @@ npm install -S afeiship/react-checkbox-group
       return (
         <div className="app-container">
           <ReactCheckboxGroup
+            name="abc"
             onChange={(e) => {
               console.log('change:', e.target.value);
             }}
@@ -56,6 +70,7 @@ npm install -S afeiship/react-checkbox-group
   }
 
   ReactDOM.render(<App />, document.getElementById('app'));
+
   ```
 
 ## documentation
