@@ -64,9 +64,6 @@ export default class extends Component {
       ...props
     } = this.props;
 
-    console.log(items);
-
-
     return (
       <section
         data-component={CLASS_NAME}
