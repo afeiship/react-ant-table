@@ -1,11 +1,12 @@
-import ReactCheckboxGroup from '../src/main';
-import ReactDOM from 'react-dom';
+import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactCheckboxGroup from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
   state = {
-    defaultValue: ['v1', 'v2'],
+    value: ['v1', 'v2'],
     items: [
       {
         label: 'optino1',
@@ -25,16 +26,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app-container">
-        <ReactCheckboxGroup
-          name="abc"
-          onChange={(e) => {
-            console.log('change:', e.target.value);
-          }}
-          items={this.state.items}
-          defaultValue={this.state.defaultValue}
-        />
-      </div>
+      <ReactDemokit
+        className="p-3 app-container"
+        url="https://github.com/afeiship/react-checkbox-group">
+        <article className="message is-info">
+          <div className="message-header">Preview:</div>
+          <div className="message-body">
+            <ReactCheckboxGroup
+              name="abc"
+              onChange={(e) => {
+                this.setState({ value: e.target.value });
+              }}
+              items={this.state.items}
+              value={this.state.value}
+            />
+          </div>
+        </article>
+        <article className="message">
+          <div className="message-header">Value changed:</div>
+          <div className="message-body">{JSON.stringify(this.state.value)}</div>
+        </article>
+      </ReactDemokit>
     );
   }
 }

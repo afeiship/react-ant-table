@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
+import noop from '@jswork/noop';
 
 const CLASS_NAME = 'react-checkbox-group';
 const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
@@ -16,16 +14,45 @@ const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
   );
 };
 
-export default class extends Component {
+export default class ReactRadioGroup extends Component {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
-    name: PropTypes.string,
+    /**
+     * The input is disabled.
+     */
+    disabled: PropTypes.bool,
+    /**
+     * The input is readOnly.
+     */
+    readOnly: PropTypes.bool,
+    /**
+     * The input name.
+     */
+    name: PropTypes.string.isRequired,
+    /**
+     * Default value.
+     */
     defaultValue: PropTypes.array,
+    /**
+     * Runtime chnaged value.
+     */
     value: PropTypes.array,
+    /**
+     * The radio group options.
+     */
     items: PropTypes.array,
+    /**
+     * The radio option template.
+     */
     template: PropTypes.func,
+    /**
+     * The handler when value changed.
+     */
     onChange: PropTypes.func
   };
 
@@ -92,3 +119,4 @@ export default class extends Component {
     );
   }
 }
+
