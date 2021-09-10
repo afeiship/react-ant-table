@@ -10,4 +10,9 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .ant-table-pagination.ant-pagination {
+    // replace float: rigth;
+    align-self: flex-end;
+  }
 }
