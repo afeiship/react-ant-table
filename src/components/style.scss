@@ -1,5 +1,13 @@
-$react-checkbox-group-options: () !default;
+.react-ant-table {
+  &,
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    height: 100%;
+  }
 
-.react-checkbox-group {
-  // your styles
+  .ant-spin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

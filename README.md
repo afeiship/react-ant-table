@@ -1,5 +1,5 @@
-# react-checkbox-group
-> Checkbox/checkbox group component for react.
+# react-ant-table
+> Antd table.
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
@@ -8,108 +8,55 @@
 
 ## installation
 ```shell
-npm install -S @jswork/react-checkbox-group
+npm install -S @jswork/react-ant-table
 ```
-
-## properties
-| Name         | Type   | Required | Default | Description                           |
-| ------------ | ------ | -------- | ------- | ------------------------------------- |
-| className    | string | false    | -       | The extended className for component. |
-| disabled     | bool   | false    | -       | The input is disabled.                |
-| readOnly     | bool   | false    | -       | The input is readOnly.                |
-| name         | string | true     | -       | The input name.                       |
-| defaultValue | array  | false    | []      | Default value.                        |
-| value        | array  | false    | []      | Runtime chnaged value.                |
-| items        | array  | false    | []      | The radio group options.              |
-| template     | func   | false    | -       | The radio option template.            |
-| onChange     | func   | false    | noop    | The handler when value changed.       |
-
 
 ## usage
 1. import css
   ```scss
-  @import "~@jswork/react-checkbox-group/dist/style.css";
+  @import "~@jswork/boilerplate-react-component/dist/style.css";
 
   // or use sass
-  @import "~@jswork/react-checkbox-group/dist/style.scss";
+  @import "~@jswork/boilerplate-react-component/dist/style.scss";
 
   // customize your styles:
-  $react-checkbox-group-options: ()
+  $boilerplate-react-component-options: ()
   ```
 2. import js
   ```js
-  import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
-  import ReactDOM from 'react-dom';
-  import ReactCheckboxGroup from '@jswork/react-checkbox-group';
-  import './assets/style.scss';
+  import ReactAntTable from '@jswork/boilerplate-react-component';
+  import styled from 'styled-components';
 
-  class App extends React.Component {
-    state = {
-      value: ['v1', 'v2'],
-      items: [
-        {
-          label: 'optino1',
-          value: 'v1',
-          disabled: true
-        },
-        {
-          label: 'optino2',
-          value: 'v2'
-        },
-        {
-          label: 'optino3',
-          value: 'v3'
-        }
-      ]
-    };
+  const Container = styled.div`
+    width: 80%;
+    margin: 30px auto 0;
+  `;
 
-    render() {
-      return (
-        <ReactDemokit
-          className="p-3 app-container"
-          url="https://github.com/afeiship/react-checkbox-group">
-          <article className="message is-info">
-            <div className="message-header">Preview:</div>
-            <div className="message-body">
-              <ReactCheckboxGroup
-                name="abc"
-                onChange={(e) => {
-                  this.setState({ value: e.target.value });
-                }}
-                items={this.state.items}
-                value={this.state.value}
-              />
-            </div>
-          </article>
-          <article className="message">
-            <div className="message-header">Value changed:</div>
-            <div className="message-body">{JSON.stringify(this.state.value)}</div>
-          </article>
-        </ReactDemokit>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('app'));
+  export default (props: any) => {
+    return (
+      <Container>
+        <ReactAntTable />
+      </Container>
+    );
+  };
 
   ```
 
-## documentation
-- https://afeiship.github.io/react-checkbox-group/
-
+## preview
+- https://afeiship.github.io/boilerplate-react-component/
 
 ## license
-Code released under [the MIT license](https://github.com/afeiship/react-checkbox-group/blob/master/LICENSE.txt).
+Code released under [the MIT license](https://github.com/afeiship/react-ant-table/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@jswork/react-checkbox-group
-[version-url]: https://npmjs.org/package/@jswork/react-checkbox-group
+[version-image]: https://img.shields.io/npm/v/@jswork/react-ant-table
+[version-url]: https://npmjs.org/package/@jswork/react-ant-table
 
-[license-image]: https://img.shields.io/npm/l/@jswork/react-checkbox-group
-[license-url]: https://github.com/afeiship/react-checkbox-group/blob/master/LICENSE.txt
+[license-image]: https://img.shields.io/npm/l/@jswork/react-ant-table
+[license-url]: https://github.com/afeiship/react-ant-table/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-checkbox-group
-[size-url]: https://github.com/afeiship/react-checkbox-group/blob/master/dist/react-checkbox-group.min.js
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-ant-table
+[size-url]: https://github.com/afeiship/react-ant-table/blob/master/dist/react-ant-table.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@jswork/react-checkbox-group
-[download-url]: https://www.npmjs.com/package/@jswork/react-checkbox-group
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-ant-table
+[download-url]: https://www.npmjs.com/package/@jswork/react-ant-table
