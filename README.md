@@ -25,7 +25,7 @@ npm install -S @jswork/react-ant-table
 2. import js
   ```js
   import React, { useState, useEffect } from 'react';
-  import ReactAntTable from '@jswork/boilerplate-react-component';
+  import ReactAntTable from '@jswork/react-ant-table';
   import '../../src/components/style.scss';
   import styled from 'styled-components';
   import nxColumn from '@jswork/next-ant-column';
