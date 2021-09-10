@@ -27,7 +27,7 @@ export default (props: any) => {
       <ReactAntTable
         columns={columns}
         dataSource={dataSource}
-        pagination={{ pageSize: 16 }}
+        pagination={{ pageSize: 15 }}
         rowKey="id"
       />
     </Container>

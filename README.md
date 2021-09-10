@@ -14,29 +14,48 @@ npm install -S @jswork/react-ant-table
 ## usage
 1. import css
   ```scss
-  @import "~@jswork/boilerplate-react-component/dist/style.css";
+  @import "~@jswork/react-ant-table/dist/style.css";
 
   // or use sass
-  @import "~@jswork/boilerplate-react-component/dist/style.scss";
+  @import "~@jswork/react-ant-table/dist/style.scss";
 
   // customize your styles:
-  $boilerplate-react-component-options: ()
+  $react-ant-table-options: ()
   ```
 2. import js
   ```js
-  import React from 'react';
+  import React, { useState, useEffect } from 'react';
   import ReactAntTable from '@jswork/boilerplate-react-component';
+  import '../../src/components/style.scss';
   import styled from 'styled-components';
-
+  import nxColumn from '@jswork/next-ant-column';
   const Container = styled.div`
     width: 80%;
     margin: 30px auto 0;
+    height: 100vh;
+    border: 1px solid #ccc;
   `;
 
   export default (props: any) => {
+    const [dataSource, setDataSource] = useState([]);
+    const columns = [nxColumn('ID', 'id'), nxColumn('Title', 'title'), nxColumn('UserId', 'userId')];
+
+    useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((r) => r.json())
+        .then((res) => {
+          setDataSource(res);
+        });
+    }, []);
+
     return (
       <Container>
-        <ReactAntTable />
+        <ReactAntTable
+          columns={columns}
+          dataSource={dataSource}
+          pagination={{ pageSize: 15 }}
+          rowKey="id"
+        />
       </Container>
     );
   };
@@ -44,7 +63,7 @@ npm install -S @jswork/react-ant-table
   ```
 
 ## preview
-- https://afeiship.github.io/boilerplate-react-component/
+- https://afeiship.github.io/react-ant-table/
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-ant-table/blob/master/LICENSE.txt).

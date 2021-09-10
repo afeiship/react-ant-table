@@ -14,13 +14,13 @@ npm install -S @jswork/react-ant-table
 ## usage
 1. import css
   ```scss
-  @import "~@jswork/boilerplate-react-component/dist/style.css";
+  @import "~@jswork/react-ant-table/dist/style.css";
 
   // or use sass
-  @import "~@jswork/boilerplate-react-component/dist/style.scss";
+  @import "~@jswork/react-ant-table/dist/style.scss";
 
   // customize your styles:
-  $boilerplate-react-component-options: ()
+  $react-ant-table-options: ()
   ```
 2. import js
   ```js
@@ -28,7 +28,7 @@ __GENERATE_DAPP__
   ```
 
 ## preview
-- https://afeiship.github.io/boilerplate-react-component/
+- https://afeiship.github.io/react-ant-table/
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-ant-table/blob/master/LICENSE.txt).
